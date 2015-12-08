@@ -6,6 +6,8 @@ var path = require('path');
 var app = express();
 var port = process.env.PORT || 3000;
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Mongoose stuff
@@ -25,7 +27,6 @@ var xmas = new Party({
   meta: {
   	guest: ["Tess", "Taylor"],
   	item: ["cheese", "taco"]
-  
   }
 });
 
@@ -33,7 +34,10 @@ app.get('/', function(req, res) {
   res.send(xmas);
 });
 
-// app.listen(3000);
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 app.listen(port, function() {
     console.log("Port " + port);
 });
