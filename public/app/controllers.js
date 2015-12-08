@@ -1,7 +1,7 @@
 angular.module("PartyCtrls", ["PartyServices"])
 
 .controller('PartyCtrl', ['PartyFactory', '$scope', function(PartyFactory, $scope) {
-  Party.query(function success(data) {     
+  PartyFactory.query(function success(data) {     
       $scope.parties = data;
       console.log($scope.parties);
   }, function error(data) {
@@ -11,7 +11,7 @@ angular.module("PartyCtrls", ["PartyServices"])
 }])
 .controller("PartyShowCtrl", ["$scope", "$routeParams", "PartyFactory", function($scope, $routeParams, PartyFactory) {
 
-  Party.get({id: $routeParams.id}, function success(data) {
+  PartyFactory.get({id: $routeParams.id}, function success(data) {
     console.log(data)
     $scope.party = data
   }, function error(data){
@@ -25,7 +25,7 @@ angular.module("PartyCtrls", ["PartyServices"])
     guest: []
   };
   $scope.createParty = function() {
-    Party.save($scope.Party, function success(data) {
+    PartyFactory.save($scope.Party, function success(data) {
       $location.path('/');
     }, function error(data) {
       console.log(data);
