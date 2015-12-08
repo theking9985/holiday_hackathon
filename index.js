@@ -11,17 +11,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/holidayDB');
 
+app.use(express.static(path.join(__dirname, 'public')));
 
-var Guest = require('./models/guests');
+app.use('/api/party', require('./controllers/party'));
+
+var Party = require('./models/party');
 
 // create a new user called Chris
-var chris = new Guest({
-  name: 'Chris',
-  nickname: 'Reindeer'
+var xmas = new Party({
+  name: 'Taylor party',
+  meta: {
+  	guest: ["Tess", "Taylor"],
+  	item: ["cheese", "taco"]
+  
+  }
 });
 
 app.get('/', function(req, res) {
-  res.send(chris);
+  res.send(xmas);
 });
 
 
