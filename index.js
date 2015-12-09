@@ -9,6 +9,7 @@ var port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Mongoose stuff
 var mongoose = require('mongoose');
