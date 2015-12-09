@@ -1,34 +1,39 @@
 <h1>Throw a Party!</h1>
 
-<div class="container">
-    <div class="col-xs-12 form-group">
-        <label>Party Name</label>
-        <input class="form-control" type="text"/>
-    </div>
-   <div class="col-xs-6 form-group">
-       <label>Guests Attending</label>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-   </div>
-   <div class="col-xs-6 form-group">
-       <label>Items to Bring</label>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-       <input class="form-control" type="text"/>
-   </div>
-</div>
+<form ng-submit="createParty()">
+
+	<div class="container" id="new">
+	    <div class="col-xs-12 form-group">
+	        <label for="name">Party Name</label>
+	        <input class="form-control" type="text" id="name" ng-model="party.name" />
+	    </div>
+	   <div class="col-xs-6 form-group">
+	       <label for="guest">Guests Attending</label>
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest1" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest2" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest3" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest4" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest5" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest6" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest7" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest8" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest9" />
+	       <input class="form-control" type="text" class="guest" ng-model="party.guest10" />
+	   </div>
+	   <div class="col-xs-6 form-group">
+	       <label for="item">Items to Bring</label>
+	       <input class="form-control" type="text" class="item" ng-model="party.item1" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item2" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item3" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item4" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item5" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item6" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item7" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item8" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item9" />
+	       <input class="form-control" type="text" class="item" ng-model="party.item10" />
+	   </div>
+	   <button type="submit" class="btn btn-danger btn-lg btn-block">SUBMIT</button>
+	</div>
+
+</form>

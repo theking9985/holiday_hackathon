@@ -10,6 +10,7 @@ router.route('/')
     });
   })
   .post(function(req, res) {
+    console.log(req.body);
     Party.create(req.body, function(err, party) {
       if (err) return res.status(500).send(err);
       res.send(party);

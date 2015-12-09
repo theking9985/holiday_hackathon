@@ -7,11 +7,11 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   })
   .when('/new', {
   	templateUrl:'app/views/new.html',
-    controller: "PartyCtrl"
+    controller: "NewCtrl"
   })
   .when('/parties/:id',{
   	templateUrl: 'app/views/show.html',
-    controller: "PartyShowCtrl"
+    controller: "NewCtrl"
   })
   .when('/index',{
   	templateUrl: 'app/views/all_parties.html'
